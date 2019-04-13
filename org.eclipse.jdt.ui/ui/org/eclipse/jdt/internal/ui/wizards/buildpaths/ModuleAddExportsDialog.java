@@ -31,7 +31,7 @@ import org.eclipse.jdt.internal.ui.IJavaHelpContextIds;
 import org.eclipse.jdt.internal.ui.JavaPlugin;
 import org.eclipse.jdt.internal.ui.wizards.IStatusChangeListener;
 import org.eclipse.jdt.internal.ui.wizards.NewWizardMessages;
-import org.eclipse.jdt.internal.ui.wizards.buildpaths.ModuleEncapsulationDetail.ModuleAddExport;
+import org.eclipse.jdt.internal.ui.wizards.buildpaths.ModuleEncapsulationDetail.ModuleAddExpose;
 
 /**
  * A dialog to configure add-exports of a library.
@@ -49,7 +49,7 @@ public class ModuleAddExportsDialog extends StatusDialog {
 	 * @param sourceJavaElements java elements representing the source modules from where packages should be exported
 	 * @param value The value to edit.
 	 */
-	public ModuleAddExportsDialog(Shell parent, IJavaElement[] sourceJavaElements, ModuleAddExport value) {
+	public ModuleAddExportsDialog(Shell parent, IJavaElement[] sourceJavaElements, ModuleAddExpose value) {
 		super(parent);
 
 		IStatusChangeListener listener= new IStatusChangeListener() {
@@ -121,7 +121,7 @@ public class ModuleAddExportsDialog extends StatusDialog {
 	 *
 	 * @return the configured export value, or {@code null} if no export was configured.
 	 */
-	public ModuleAddExport getExport(CPListElementAttribute parentAttribute) {
+	public ModuleAddExpose getExport(CPListElementAttribute parentAttribute) {
 		return fAddExportsBlock.getExport(parentAttribute);
 	}
 }
